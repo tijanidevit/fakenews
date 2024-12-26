@@ -1,0 +1,87 @@
+{% extends "base.html" %} {% block title %}WhatsApp {% endblock %} {% block
+content %}
+
+<div id="main-wrapper" class="page-wrapper">
+  <div class="inner-page-header section-padding style-dark">
+    <div class="container">
+      <div class="page-title-inner text-center clearfix">
+        <div class="heading-wrapper">
+          <h1 class="h1">Send WhatsApp Message</h1>
+          <div class="lead-text">
+            <p>Send a message via WhatsApp</p>
+          </div>
+        </div>
+      </div>
+      <!--* Page Title Inner -->
+    </div>
+  </div>
+
+  <div class="about-section section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="heading-wrapper with-separator text-center">
+            <h2 class="h1">We're Here To <span>prevent</span> fake news</h2>
+            <div class="lead-text">
+              <p>
+                Have a message to share but want to verify it first? Submit it
+                here to check for accuracy before sending!
+              </p>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form method="post">
+              {% include 'flash.html' %}
+
+              <!-- {% if result == 'REAL' %}
+              <div class="alert alert-success">
+                The news is {{result}} and has been sent!
+              </div>
+              {% elif result == 'FAKE' %}
+              <div class="alert alert-warning">
+                The news is {{result}} and was not sent
+              </div>
+              {% endif %} -->
+
+              <div class="form-group">
+                <label for="">Receipient's WhatsApp number</label>
+                <input
+                  type="text"
+                  required
+                  name="receipient"
+                  class="form-control"
+                  placeholder="Enter receipient WhatsApp number"
+                  value="{{receipient}}"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="">Message</label>
+                <textarea
+                  required
+                  name="input"
+                  class="form-control"
+                  placeholder="Enter a link or text to verify"
+                >
+{{input_text}}</textarea
+                >
+              </div>
+              <div class="form-group">
+                <input
+                  type="submit"
+                  class="btn btn-primary"
+                  value="Send message"
+                />
+                <!-- <button type="reset" class="btn btn-warning">Reset</button> -->
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--* End Col -->
+      </div>
+      <!--* End Row -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

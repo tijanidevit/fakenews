@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} - DeBunk{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'images/favicon.ico') }}" />
+    <!-- WOW Animation -->
+    <link href="{{ url_for('static', filename = 'css/animate.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap css -->
+    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Slick Slider -->
+    <link href="{{ url_for('static', filename = 'css/slick.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="{{ url_for('static', filename = 'css/materialdesignicons.min.css') }}" rel="stylesheet"
+        type="text/css" />
+    <link href="{{ url_for('static', filename = 'css/line-awesome.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename = 'css/fontawesome.min.css') }}" rel="stylesheet" type="text/css" />
+    <!-- Main css File -->
+    <link href="{{ url_for('static', filename = 'css/style.css') }}" rel="stylesheet" type="text/css"
+        id="theme-default" />
+    <link href="{{ url_for('static', filename = 'css/rtl-style.css') }}" rel="stylesheet" type="text/css"
+        id="rtl-theme-default" disabled="disabled" />
+    <link href="{{ url_for('static', filename = 'css/colors/default-color.css') }}" rel="stylesheet" type="text/css"
+        id="theme-color" />
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+</head>
+
+<body>
+    <div class="box-wrapper">
+        <!--* Loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="d-loader">
+                    <img src="{{ url_for('static', filename = 'images/dcode-loader.gif') }}" alt="DeBunk">
+                </div>
+            </div>
+        </div>
+        <header id="master-head" class="navbar menu-absolute menu-center menu-light">
+            <div class="container-fluid">
+                <div id="main-logo" class="logo-container">
+                    <a class="logo" href="/">
+                        <img src="{{ url_for('static', filename = 'images/d-code-logo-dark.svg') }}" class="logo-dark"
+                            alt="DeBunk">
+                        <img src="{{ url_for('static', filename = 'images/d-code-logo-light.svg') }}"
+                            class="logo-light" alt="DeBunk">
+                    </a>
+                </div>
+                <div class="menu-toggle-btn">
+                    <!--* Mobile menu toggle-->
+                    <a class="navbar-toggle">
+                        <div class="burger-lines">
+                        </div>
+                    </a>
+                    <!--* End mobile menu toggle-->
+                </div>
+                <div id="navigation" class="nav navbar-nav navbar-main">
+                    <ul id="main-menu" class="menu-primary">
+                        <li class="menu-item active">
+                            <a href="/">Home</a>
+                        </li>
+
+                        {% if session.user_id %}
+                        <li class="menu-item active">
+                            <a href="predict">Predict</a>
+                        </li>
+
+                        <li class="menu-item active">
+                            <a href="whatsapp">WhatsApp</a>
+                        </li>
+
+                        <li class="menu-item active">
+                            <a href="history">History</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="navbar-right">
+                    <div class="menu-button">
+
+                        {% if session.user_id %}
+                        <a href="/logout" target="" class="mr-2">
+                            <div class="btn btn-outline-primary btn-light">logout</div>
+                        </a>
+                        {% else %}
+                        <a href="/login" target="" class="mr-2">
+                            <div class="btn btn-outline-primary btn-light">sign in</div>
+                        </a>
+                        <a href="/register" target="">
+                            <div class="btn btn-outline-primary btn-light">register</div>
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+
+        {% block content %}{% endblock %}
+
+
+        <footer class="site-footer footer-theme-three">
+            <div class="container">
+                <div class="copyright-bar style-dark">
+                    <div class="copyright-text text-center">
+
+                        © Copyright DeBunk 2024. Made with <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--* Main Footer -->
+
+    </div>
+    <!--* box-wrapper -->
+
+    <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/jquery-migrate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/scrollspy.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/appear.js') }}"></script>
+    <!-- WOW Animation -->
+    <script src="{{ url_for('static', filename = 'js/wow.min.js') }}"></script>
+    <!-- Slick Slider -->
+    <script src="{{ url_for('static', filename = 'js/slick.min.js') }}"></script>
+    <!-- Main Js -->
+    <script src="{{ url_for('static', filename = 'js/dcode.js') }}"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#predictionTable').DataTable();
+        });
+    </script>
+
+</body>
+
+</html>
+</body>
+
+</html>

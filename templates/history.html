@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %}History {% endblock %} {% block
+    content %}
+
+
+<div id="main-wrapper" class="page-wrapper">
+    <div class="inner-page-header section-padding style-dark">
+        <div class="container">
+            <div class="page-title-inner text-center clearfix">
+                <div class="heading-wrapper">
+                    <h1 class="h1">History of Verified News</h1>
+                    <div class="lead-text">
+                        <p>Review your past submissions and see the results of our fake news verification process.</p>
+                    </div>
+                </div>
+            </div><!--* Page Title Inner -->
+        </div>
+    </div>
+
+    <div class="about-section section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="heading-wrapper with-separator text-center">
+                        <h2 class="h1">Your <span>DeBunk</span> History</h2>
+                        <div class="lead-text">
+                            <p>Here you can check the history of news articles you’ve submitted for verification. Review
+                                their results below.</p>
+                        </div>
+                    </div>
+                    <table class="table" id="predictionTable" class="display">
+                        <thead>
+                            <tr>
+                                <th>Text/URL</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for prediction in predictions %}
+                            <tr>
+                                <td>
+                                    {% set display_text = prediction.text[:140] %}
+                                    {% if prediction.text.startswith('http') %}
+                                        <a href="{{ prediction.text }}" target="_blank">{{ display_text }}{% if prediction.text|length > 140 %}...{% endif %}</a>
+                                    {% else %}
+                                        {{ display_text }}{% if prediction.text|length > 140 %}...{% endif %}
+                                    {% endif %}
+                                </td>
+                                <td>{{ prediction . result }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div><!--* End Col -->
+            </div><!--* End Row -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

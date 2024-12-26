@@ -1,0 +1,71 @@
+{% extends "base.html" %} {% block title %}Verify news {% endblock %} {% block
+content %}
+
+<div id="main-wrapper" class="page-wrapper">
+  <div class="inner-page-header section-padding style-dark">
+    <div class="container">
+      <div class="page-title-inner text-center clearfix">
+        <div class="heading-wrapper">
+          <h1 class="h1">Verify News Authenticity</h1>
+          <div class="lead-text">
+            <p>
+              Check if a news article is real or fake by submitting it for
+              verification.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--* Page Title Inner -->
+    </div>
+  </div>
+
+  <div class="about-section section-padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="heading-wrapper with-separator text-center">
+            <h2 class="h1">We're Here To <span>DeBunk</span> fake news</h2>
+            <div class="lead-text">
+              <p>
+                Have a news article you're unsure about? Submit it below to
+                verify its authenticity.
+              </p>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form method="post">
+              {% include 'flash.html' %} {% if result == 'REAL' %}
+              <div class="alert alert-success">The news is {{result}}</div>
+              {% elif result == 'FAKE' %}
+              <div class="alert alert-warning">The news is {{result}}</div>
+              {% endif %}
+
+              <div class="form-group">
+                <textarea
+                  required
+                  name="input"
+                  class="form-control"
+                  placeholder="Enter a link or text to verify"
+                >
+{{input_text}}</textarea
+                >
+              </div>
+              <div class="form-group">
+                <input
+                  type="submit"
+                  class="btn btn-primary"
+                  value="Verify now"
+                />
+                <!-- <button type="reset" class="btn btn-warning">Reset</button> -->
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--* End Col -->
+      </div>
+      <!--* End Row -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

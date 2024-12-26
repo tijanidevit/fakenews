@@ -1,0 +1,185 @@
+{% extends "base.html" %} {% block title %}Landing Page{% endblock %} {% block
+content %}
+<div id="main-wrapper" class="page-wrapper">
+    <div class="page-header section-padding style-dark full-height dc-three left-col-full">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="image-wrapper">
+                        <img src="{{ url_for('static', filename = 'images/default-color/security-software-img.png') }}"
+                            alt="" />
+                    </div>
+                </div>
+                <!--* End Col -->
+                <div class="col-lg-6">
+                    <div class="heading-wrapper wow fadeInRight" data-wow-delay="0.2s">
+                        <h1>DeBunk is <span>your trusted news verification</span> tool.</h1>
+                    </div>
+                    <div class="text-wrapper wow fadeInRight" data-wow-delay="0.4s">
+                        <p class="lead-text">
+                            Verify news accuracy with ease — stay informed and secure.
+                        </p>
+                        <p>
+                            DeBunk empowers you to distinguish fact from fiction effortlessly.
+                            Our advanced technology ensures that you receive only reliable
+                            information, helping you make well-informed decisions. Say goodbye
+                            to misinformation and hello to trusted news.
+                        </p>
+                    </div>
+
+                    <div class="btn-wrapper wow fadeInRight" data-wow-delay="0.5s">
+                        {% if session.user_id %}
+                        <a class="btn btn-primary btn-light" href="/predict">Verify news now</a>
+                        {% else %}
+                        <a class="btn btn-primary btn-light" href="/register">Get Started Now</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <!--* End Col -->
+            </div>
+            <!--* End Row -->
+        </div>
+    </div>
+    <!--* Page Header -->
+    <div class="about-section section-padding dc-two">
+        <div class="container">
+            <div class="row clearfix align-items-center flex-row-reverse">
+                <div class="col-lg-6 text-center">
+                    <div class="image-wrapper">
+                        <img src="{{ url_for('static', filename = 'images/default-color/d-image-icon.png') }}"
+                            alt="News Verification" />
+                    </div>
+                </div>
+                <!--* End Col -->
+                <div class="col-lg-6">
+                    <div class="heading-wrapper with-separator">
+                        <h2 class="h1">
+                            Empower Your Knowledge with <span>Accurate News Verification</span>
+                        </h2>
+                    </div>
+                    <!--* End Heading -->
+                    <div class="text-wrapper">
+                        <p class="lead-text">
+                            Stay ahead of misinformation with our cutting-edge news verification tools.
+                        </p>
+                        <p>
+                            At DeBunk, we provide powerful tools to help you verify the authenticity of news and
+                            information. Our platform uses advanced algorithms and expert insights to ensure that you
+                            receive reliable and accurate content. With our support, you can confidently navigate the
+                            information landscape and make informed decisions.
+                        </p>
+                    </div>
+                    <div class="btn-wrapper">
+                        <a class="btn btn-primary" href="/register">Learn More</a>
+                    </div>
+                </div>
+                <!--* End Col -->
+            </div>
+            <!--* End Row -->
+        </div>
+    </div>
+
+    <!--* About Section -->
+    <div class="services-section light-gradient-bg section-padding">
+        <div class="container">
+            <div class="row clearfix justify-content-center">
+                <div class="col-lg-10">
+                    <div class="heading-wrapper text-center with-separator">
+                        <h2 class="h1">How <span>DeBunk</span> Works</h2>
+                        <div class="lead-text">
+                            <p>
+                                Discover how DeBunk helps you navigate the sea of information with our powerful news verification tools. Our system ensures that you can quickly and accurately determine the credibility of any news source.
+                            </p>
+                        </div>
+                    </div>
+                    <!--* End Heading -->
+                </div>
+                <!--* End Col -->
+            </div>
+            <!--* End Row -->
+            <div class="row clearfix">
+                <div class="col-lg-4">
+                    <div class="icon-box theme-two wow fadeInLeft">
+                        <div class="icon">
+                            <img src="{{ url_for('static', filename='images/default-color/icon-8.svg') }}" alt="Real-Time Scanning" />
+                        </div>
+                        <div class="text">
+                            <h4>Real-Time Verification</h4>
+                            <p>
+                                Instantly check the authenticity of news articles with our real-time verification system. Stay ahead of misinformation as it happens.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--* End Col -->
+                <div class="col-lg-4">
+                    <div class="icon-box theme-two wow fadeInUp">
+                        <div class="icon">
+                            <img src="{{ url_for('static', filename='images/default-color/icon-9.svg') }}" alt="Source Analysis" />
+                        </div>
+                        <div class="text">
+                            <h4>Source Analysis</h4>
+                            <p>
+                                Analyze the credibility of news sources with our comprehensive source analysis tools. Identify biased or unreliable sources with ease.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--* End Col -->
+                <div class="col-lg-4">
+                    <div class="icon-box theme-two wow fadeInRight">
+                        <div class="icon">
+                            <img src="{{ url_for('static', filename='images/default-color/icon-10.svg') }}" alt="Content Fact-Checking" />
+                        </div>
+                        <div class="text">
+                            <h4>Content Fact-Checking</h4>
+                            <p>
+                                Verify the facts within articles to ensure accuracy and reliability. Our fact-checking system helps you distinguish between truth and fiction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--* End Col -->
+            </div>
+            <!--* End Row -->
+        </div>
+    </div>
+    
+    <!--* Services Section -->
+    <div class="user-interface-section section-padding pt-0">
+        <div class="container">
+            <div class="row align-items-center clearfix">
+                <div class="col-lg-6">
+                    <div class="image-wrapper">
+                        <img src="{{ url_for('static', filename='images/default-color/user-interface-img.png') }}" alt="User Interface" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="heading-wrapper with-separator">
+                        <h2 class="h1">
+                            Sleek and <span>User-Friendly Interface</span> for Effortless Navigation
+                        </h2>
+                    </div>
+                    <!--* End Heading -->
+                    <div class="text-wrapper">
+                        <p>
+                            Experience a user interface designed with simplicity and effectiveness in mind. DeBunk’s intuitive design ensures that you can verify news quickly and easily.
+                        </p>
+                        <ul class="list-style-one">
+                            <li>Intuitive design for seamless navigation.</li>
+                            <li>Quick access to news verification tools.</li>
+                            <li>Responsive layout for any device.</li>
+                        </ul>
+                    </div>
+                    <div class="btn-wrapper">
+                        <a href="/register" class="btn btn-primary">Try DeBunk for Free</a>
+                    </div>
+                </div>
+                <!--* End Col -->
+            </div>
+            <!--* End Row -->
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

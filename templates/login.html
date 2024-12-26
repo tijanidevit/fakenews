@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}Login {% endblock %} {% block
+    content %}
+
+
+<div id="main-wrapper" class="page-wrapper">
+    <div class="dc-signin theme-one">
+        <div class="signin-wrapper">
+            <div class="box-header style-dark">
+                <img src="{{ url_for('static', filename = 'images/d-code-logo-light.svg') }}" class="logo-dark"
+                    alt="DCode">
+                <h1><span>Welcome back,</span> Sign In!</h1>
+            </div>
+            <div class="box-body">
+                <form method="POST" action="">
+                    {% include 'flash.html'   %}
+                    <div class="form-group">
+                        <input required name="username" type="text" class="form-control"
+                            placeholder="Enter Username">
+                    </div>
+                    <div class="form-group">
+                        <input required name="password" type="password" class="form-control"
+                            placeholder="Enter Password">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                    </div>
+                    <div class="form-group text-center">
+                        <a href="/register" class="btn link-btn signup-link">New here? register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--* Page Header -->
+</div>
+
+{% endblock %}
